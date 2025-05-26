@@ -21,6 +21,12 @@ app.set("views" , path.resolve("./views"));
 app.use(express.urlencoded({extended : false}))
 app.use(cookieParser());
 app.use(checkForAuthenticationCookie("token"))
+
+// app.use((req, res, next) => {
+//   res.locals.user = req.user;
+//   next();
+// });
+
 app.use(express.static(path.resolve('./public')));
 
 
